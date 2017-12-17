@@ -6,8 +6,7 @@ import user from './user'
 
 const reducer = combineReducers({user})
 const middleware = composeWithDevTools(applyMiddleware(
-  thunkMiddleware,
-  createLogger({collapsed: true})
+  thunkMiddleware
 ))
 const store = createStore(reducer, middleware)
 

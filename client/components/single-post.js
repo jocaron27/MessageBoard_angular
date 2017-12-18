@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import PostReplies from './post-replies';
 import AddReply from './add-reply';
-
+const moment = require('moment');
 
 function SinglePost(props) {
     const { postId, posts } = props;
@@ -15,12 +15,12 @@ function SinglePost(props) {
             <div>
                 <div>{currentPost.title}</div>
                 <div>By: {currentPost.user}</div>
-                <div>On: {currentPost.date}</div>
+                <div>On: {moment(currentPost.date).format('MMMM Do YYYY, h:mm:ss a')}</div>
                 <Link to="/"><button>Back to Posts</button></Link>
-                <div>{currentPost.text}</div>
+                <div>{currentPost.body}</div>
             </div>
             <hr />
-            <div>Responses:</div>
+            <div id="comments">Responses:</div>
             <PostReplies postId={postId} />
             <AddReply postId={postId} />
         </div>

@@ -22,7 +22,7 @@ class Routes extends Component {
             <Route exact path="/" component={AllPosts} />
             <Route exact path="/posts" component={AllPosts} />
             <Route exact path="/posts/:id" component={SinglePost} />
-            <Route exact path="/posts/new" component={AddPost} />
+            <Route exact path="/new" component={AddPost} />
           </Switch>
         </Main>
       </Router>

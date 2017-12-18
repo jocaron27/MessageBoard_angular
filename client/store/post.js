@@ -5,21 +5,16 @@ import axios from 'axios';
  * ACTION TYPES
  */
 const GET_POSTS = 'GET_POSTS';
-const GET_POST = 'GET_POST';
 
 /**
  * INITIAL STATE
  */
-const initialState = {
-    allPosts: [],
-    currentPost: {}
-}
+const allPosts = [];
 
 /**
  * ACTION CREATORS
  */
 const getPosts = (posts) => ({type: GET_POSTS, posts})
-const getPost = (post) => ({type: GET_POST, post})
 
 /**
  * THUNK CREATORS
@@ -32,14 +27,6 @@ export const fetchPosts = () =>
       })
       .catch(err => console.log(err))
 
-export const fetchPost = (id) =>
-  dispatch =>
-    axios.get(`/api/posts/${id}`)
-      .then(res => {
-        dispatch(getPost(res.data))
-      })
-      .catch(err => console.error(err))
-
 export const createPost = (formFields, history) =>
     dispatch =>
         axios.post('/api/posts', formFields)
@@ -51,12 +38,10 @@ export const createPost = (formFields, history) =>
 /**
  * REDUCER
  */
-export default function (state = initialState, action) {
+export default function (state = allPosts, action) {
   switch (action.type) {
     case GET_POSTS:
-      return Object.assign({}, state, {allPosts: action.posts})
-    case GET_POST:
-      return Object.assign({}, state, {currentPost: action.post})
+      return action.posts
     default:
       return state
   }

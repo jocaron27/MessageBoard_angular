@@ -19,8 +19,9 @@ module.exports = Reply
 /**
  * instanceMethods
  */
-Reply.prototype.updateTime = function (reply) {
-  reply.time = Date.now();
+Reply.prototype.updateTime = function () {
+  let date = Date.now();
+  this.date = date;
 }
 
-Reply.beforeCreate((reply) => this.updateTime(reply));
+Reply.beforeCreate((reply) => reply.updateTime());

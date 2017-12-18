@@ -5,7 +5,6 @@ const moment = require('moment');
 
 function AllPosts(props) {
     const { posts } = props;
-    console.log(posts)
     return (
       <div className="main">
         {posts.length ? posts.map(post => {
@@ -26,7 +25,7 @@ function AllPosts(props) {
 
 const mapStateToProps = function (state) {
     return {
-        posts: state.post.allPosts,
+        posts: state.allPosts,
     }
 };
 

@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {Route, Switch, Router} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import history from './history'
-import {Main, AllPosts, AddPost} from './components'
+import {Main, AllPosts, AddPost, SinglePost} from './components'
 import {fetchPosts} from './store'
 
 /**
@@ -20,6 +20,7 @@ class Routes extends Component {
         <Main>
           <Switch>
             <Route exact path="/" component={AllPosts} />
+            <Route exact path="/posts/:id" component={SinglePost} />
             <Route exact path="/posts/new" component={AddPost} />
           </Switch>
         </Main>
@@ -33,7 +34,7 @@ class Routes extends Component {
  */
 const mapState = (state) => {
   return {
-    posts: state.post.allPosts
+    posts: state.allPosts
   }
 }
 

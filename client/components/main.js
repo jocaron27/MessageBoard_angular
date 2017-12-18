@@ -9,7 +9,7 @@ const Main = (props) => {
 
   return (
     <div>
-      <h1>Message Board</h1>
+      <h1>The Fairygodboss Message Board</h1>
       <nav>
         {
           isLoggedIn

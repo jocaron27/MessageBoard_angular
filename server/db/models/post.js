@@ -9,6 +9,12 @@ const Post = db.define('post', {
   body: {
     type: Sequelize.TEXT
   },
+  excerpt: {
+    type: Sequelize.VIRTUAL,
+    get() {
+      return this.body.slice(0, 100).concat('...')
+    }
+  },
   user: {
       type: Sequelize.STRING,
       allowNull: false
@@ -27,8 +33,9 @@ module.exports = Post
 /**
  * instanceMethods
  */
-Post.prototype.updateTime = function (post) {
-  post.time = Date.now();
+Post.prototype.updateTime = function () {
+  let date = Date.now();
+  this.date = date;
 }
 
-Post.beforeCreate((post) => this.updateTime(post));
+Post.beforeCreate((post) => post.updateTime());

@@ -1,10 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
-import { writePostTitle, writePostBody, writePostUser, createPost } from '../store';
+import { createPost } from '../store';
+const moment = require('moment');
 
 function AddPost(props) {
-    const { user, newPostTitle, newPostBody, newPostUser, handleChangeTitle, handleChangeBody, handleChangeUser, handleSubmit } = props;
+    const { user, handleSubmit } = props;
     return (
       <div className="main">
         <h2>Create a new post:</h2>
@@ -12,8 +13,6 @@ function AddPost(props) {
           <div className="form-group">
             <label htmlFor="title">Title</label>
             <input
-              value={newPostTitle}
-              onChange={handleChangeTitle}
               className="form-control"
               type="text"
               name="title"
@@ -21,8 +20,6 @@ function AddPost(props) {
             />
             <label htmlFor="body">Message</label>
             <textarea
-            value={newPostBody}
-            onChange={handleChangeBody}
             className="form-control"
             type="text"
             name="body"
@@ -32,8 +29,6 @@ function AddPost(props) {
             />
             <label htmlFor="user">User</label>
             <input
-              value={newPostUser}
-              onChange={handleChangeUser}
               className="form-control"
               type="text"
               name="user"
@@ -49,35 +44,19 @@ function AddPost(props) {
     )
 }
 
-const mapStateToProps = function (state) {
-    return {
-        newPostTitle: state.newPostTitle,
-        newPostBody: state.newPostBody,
-        newPostUser: state.newPostUser,
-        user: state.defaultUser
-    }
-};
+const mapStateToProps = (state) => {
+  return {}
+}
 
 const mapDispatchToProps = function (dispatch, ownProps) {
   return {
-    handleChangeTitle (event) {
-      dispatch(writePostTitle(event.target.value));
-    },
-    handleChangeBody(event) {
-        dispatch(writePostBody(event.target.value))
-    },
-    handleChangeUser(event) {
-      dispatch(writePostUser(event.target.value))
-    },
-    handleSubmit (event, loggedInUser) {
+    handleSubmit (event) {
       event.preventDefault();
       const title = event.target.title.value;
       const body = event.target.body.value;
-      const user = event.target.user.value || loggedInUser.email
-      dispatch(createPost({title, body, user}, ownProps.history));
-      dispatch(writePostTitle(''));
-      dispatch(writePostBody(''));
-      dispatch(writePostUser(''));
+      const user = event.target.user.value;
+      const date = moment().format('MMMM Do YYYY, h:mm:ss a');
+      dispatch(createPost({title, body, user, date}, ownProps.history));
     }
   };
 };

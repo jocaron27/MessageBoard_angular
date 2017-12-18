@@ -6,7 +6,6 @@ import axios from 'axios';
  */
 const GET_POSTS = 'GET_POSTS';
 const GET_POST = 'GET_POST';
-const ADD_POST = 'ADD_POST';
 
 /**
  * INITIAL STATE
@@ -21,7 +20,6 @@ const initialState = {
  */
 const getPosts = (posts) => ({type: GET_POSTS, posts})
 const getPost = (post) => ({type: GET_POST, post})
-const addPost = (post) => ({type: ADD_POST, post})
 
 /**
  * THUNK CREATORS
@@ -36,17 +34,18 @@ export const fetchPosts = () =>
 
 export const fetchPost = (id) =>
   dispatch =>
-    axios.get(`/posts/${id}`)
+    axios.get(`/api/posts/${id}`)
       .then(res => {
         dispatch(getPost(res.data))
       })
       .catch(err => console.error(err))
 
-export const createPost = (formFields) =>
+export const createPost = (formFields, history) =>
     dispatch =>
-        axios.post('/posts', formFields)
-        .then(res =>
-            dispatch(addPost(res.data)))
+        axios.post('/api/posts', formFields)
+        .then(() =>
+            dispatch(fetchPosts()))
+        .then(() => history.push('/'))
         .catch(err => console.log(err))
 
 /**
@@ -58,8 +57,6 @@ export default function (state = initialState, action) {
       return Object.assign({}, state, {allPosts: action.posts})
     case GET_POST:
       return Object.assign({}, state, {currentPost: action.post})
-    case ADD_POST:
-      return Object.assign({}, state, {allPosts: [state.allPosts, ...action.post]})
     default:
       return state
   }

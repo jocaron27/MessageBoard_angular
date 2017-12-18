@@ -19,8 +19,8 @@ class Routes extends Component {
       <Router history={history}>
         <Main>
           <Switch>
-            <Route path="/posts" component={AllPosts} />
-            <Route path="/posts/new" component={AddPost} />
+            <Route exact path="/" component={AllPosts} />
+            <Route exact path="/posts/new" component={AddPost} />
           </Switch>
         </Main>
       </Router>

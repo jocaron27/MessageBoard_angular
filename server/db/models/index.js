@@ -1,7 +1,11 @@
-const User = require('./user')
+const User = require('./user');
+const Post = require('./post');
+const Reply = require('./reply');
 
-//associations go here
+//associations
+User.hasMany(Post);
+Post.hasMany(Reply);
 
 module.exports = {
-  User
+  User, Post, Reply
 }

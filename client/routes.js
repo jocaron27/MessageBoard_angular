@@ -36,7 +36,7 @@ class Routes extends Component {
 const mapState = (state) => {
   return {
     posts: state.allPosts,
-    replies: state.allReplies
+    replies: state.replies.allReplies
   }
 }
 

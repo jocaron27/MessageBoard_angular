@@ -27,7 +27,7 @@ function AllPosts(props) {
 const mapStateToProps = function (state) {
     return {
         posts: state.allPosts,
-        replies: state.allReplies
+        replies: state.replies.allReplies
     }
 };
 

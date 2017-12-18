@@ -4,9 +4,9 @@ import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import user from './user';
 import allPosts from './post';
-import allReplies from './reply';
+import replies from './reply';
 
-const reducer = combineReducers({user, allPosts, allReplies})
+const reducer = combineReducers({user, allPosts, replies})
 const middleware = composeWithDevTools(applyMiddleware(
   thunkMiddleware
 ))

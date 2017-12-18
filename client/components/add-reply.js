@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createReply } from '../store';
+import { createReply, writeMessage, writeUser } from '../store';
 
 function AddReply(props) {
-    const { handleSubmit } = props;
+    const { handleSubmit, newReplyMessage, newReplyUser, handleChangeMessage, handleChangeUser } = props;
     return (
       <div className="main">
         <h2>Create a new post:</h2>
@@ -11,6 +11,8 @@ function AddReply(props) {
           <div className="form-group">
             <label htmlFor="body">Reply Message</label>
             <textarea
+            value={newReplyMessage}
+            onChange={handleChangeMessage}
             className="form-control"
             type="text"
             name="text"
@@ -20,6 +22,8 @@ function AddReply(props) {
             />
             <label htmlFor="user">Reply User</label>
             <input
+              value={newReplyUser}
+              onChange={handleChangeUser}
               className="form-control"
               type="text"
               name="user"
@@ -35,7 +39,10 @@ function AddReply(props) {
 }
 
 const mapStateToProps = (state) => {
-  return {}
+  return {
+    newReplyMessage: state.replies.newMessage,
+    newReplyUser: state.replies.newUser
+  }
 }
 
 const mapDispatchToProps = function (dispatch, ownProps) {
@@ -46,6 +53,14 @@ const mapDispatchToProps = function (dispatch, ownProps) {
       const user = event.target.user.value;
       const text = event.target.text.value;
       dispatch(createReply({user, text, postId}));
+      dispatch(writeMessage(''));
+      dispatch(writeUser(''));
+    },
+    handleChangeMessage (event) {
+      dispatch(writeMessage(event.target.value))
+    },
+    handleChangeUser (event) {
+      dispatch(writeUser(event.target.value))
     }
   };
 };

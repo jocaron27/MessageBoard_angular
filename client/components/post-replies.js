@@ -21,7 +21,7 @@ function AllReplies(props) {
 
 const mapStateToProps = function (state, ownProps) {
     return {
-        replies: state.allReplies,
+        replies: state.replies.allReplies,
         postId: ownProps.postId
     }
 };

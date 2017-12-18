@@ -1,14 +1,13 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
-// import PostReplies from './post-replies';
-import { fetchPosts } from '../store';
+import PostReplies from './post-replies';
+import AddReply from './add-reply';
 
 
 function SinglePost(props) {
     const { postId, posts } = props;
-    console.log('posts', posts)
     let currentPost = posts.find(post => post.id === postId)
-    console.log('currentPost', currentPost)
     return (
     <div className="post">
     {currentPost ? (
@@ -17,11 +16,13 @@ function SinglePost(props) {
                 <div>{currentPost.title}</div>
                 <div>By: {currentPost.user}</div>
                 <div>On: {currentPost.date}</div>
+                <Link to="/"><button>Back to Posts</button></Link>
                 <div>{currentPost.text}</div>
             </div>
             <hr />
             <div>Responses:</div>
-            {/*<PostReplies postId={postId} />*/}
+            <PostReplies postId={postId} />
+            <AddReply postId={postId} />
         </div>
         ) : <span />
     }
@@ -37,11 +38,7 @@ const mapStateToProps = function (state, ownProps) {
 };
 
 const mapDispatchToProps = function (dispatch) {
-    return {
-        loadPosts () {
-          dispatch(fetchPosts());
-        }
-      };
+    return {};
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SinglePost);

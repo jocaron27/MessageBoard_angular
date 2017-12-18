@@ -1,35 +1,33 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchReplies } from '../store';
 
 function AllReplies(props) {
-    const { replies } = props;
+    const { replies, postId } = props;
     return (
       <div className="replies">
-        {replies.map(reply => {          
-            return (
-                <div key={reply.id}>
-                    <div>{reply.user}:</div>
-                    <div>{reply.text}</div>
-                </div>
-            )
+        {replies.map(reply => {
+            if (reply.postId === postId) {
+                return (
+                    <div key={reply.id}>
+                        <div>{reply.user}:</div>
+                        <div>{reply.text}</div>
+                    </div>
+                )
+            }          
         })}
     </div>
     )
 }
 
-const mapStateToProps = function (state) {
+const mapStateToProps = function (state, ownProps) {
     return {
-        replies: state.currentReplies
+        replies: state.allReplies,
+        postId: ownProps.postId
     }
 };
 
-const mapDispatchToProps = function (dispatch, ownProps) {
-    return {
-      loadReplies () {
-        dispatch(fetchReplies(ownProps.postId));
-      }
-    };
+const mapDispatchToProps = function (dispatch) {
+    return {};
   };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AllReplies);

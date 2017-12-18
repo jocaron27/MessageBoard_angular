@@ -5,11 +5,11 @@ import { createPost } from '../store';
 const moment = require('moment');
 
 function AddPost(props) {
-    const { user, handleSubmit } = props;
+    const { handleSubmit } = props;
     return (
       <div className="main">
         <h2>Create a new post:</h2>
-        <form className="form" onSubmit={(event) => handleSubmit(event, user)}>
+        <form className="form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="title">Title</label>
             <input

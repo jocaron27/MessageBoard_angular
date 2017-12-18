@@ -4,7 +4,7 @@ import {Route, Switch, Router} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import history from './history'
 import {Main, AllPosts, AddPost, SinglePost} from './components'
-import {fetchPosts} from './store'
+import {fetchPosts, fetchReplies} from './store'
 
 /**
  * COMPONENT
@@ -20,6 +20,7 @@ class Routes extends Component {
         <Main>
           <Switch>
             <Route exact path="/" component={AllPosts} />
+            <Route exact path="/posts" component={AllPosts} />
             <Route exact path="/posts/:id" component={SinglePost} />
             <Route exact path="/posts/new" component={AddPost} />
           </Switch>
@@ -34,7 +35,8 @@ class Routes extends Component {
  */
 const mapState = (state) => {
   return {
-    posts: state.allPosts
+    posts: state.allPosts,
+    replies: state.allReplies
   }
 }
 
@@ -42,6 +44,7 @@ const mapDispatch = (dispatch) => {
   return {
     loadInitialData () {
       dispatch(fetchPosts())
+      dispatch(fetchReplies());
     }
   }
 }

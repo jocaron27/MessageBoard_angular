@@ -9,7 +9,7 @@ function SinglePost(props) {
     const { postId, posts } = props;
     let currentPost = posts.find(post => post.id === postId)
     return (
-    <div className="post">
+    <div className="main">
     {currentPost ? (
         <div>
             <div>

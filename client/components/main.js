@@ -8,9 +8,8 @@ const Main = (props) => {
   const {children} = props
 
   return (
-    <div>
-      <h1>The Fairygodboss Message Board</h1>
-      <hr />
+    <div className="app">
+      <h1 className="title">The Fairygodboss Message Board</h1>
       {children}
     </div>
   )

@@ -1,8 +1,20 @@
 /* ------- Mobile ------- */
 
 @media (max-width: 768px) {
+  .main {
+    padding-bottom: 15% !important;
+  }
+
   .post-arrow {
     display: none;
+  }
+
+  .post-content-date {
+    display: none;
+  }
+
+  .post-content-info {
+    width: 100% !important;
   }
 
   .form-group {
@@ -53,7 +65,7 @@ form div {
 
 form input, textarea {
   width: 100%;
-  margin: 1em 0em;
+  margin: 1em -1em;
   border: 1px solid black;
 }
 

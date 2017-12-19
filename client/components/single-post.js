@@ -12,17 +12,27 @@ function SinglePost(props) {
     <div className="main">
     {currentPost ? (
         <div>
-            <div>
-                <div>{currentPost.title}</div>
-                <div>By: {currentPost.user}</div>
-                <div>On: {moment(currentPost.date).format('MMMM Do YYYY, h:mm:ss a')}</div>
-                <Link to="/"><button>Back to Posts</button></Link>
-                <div>{currentPost.body}</div>
+            <div className="single-post-container">
+                <div className="single-post-header">
+                    <div className="single-post-title">{currentPost.title}</div>
+                    <div className="single-post-info">
+                        <div className="single-post-user">By: {currentPost.user}</div>
+                        <div className="single-post-date">On: {moment(currentPost.date).format('MMMM Do YYYY, h:mm:ss a')}</div>
+                    </div>
+                </div>
+                <div className="single-post-button">
+                    <Link to="/"><button>Back to Posts</button></Link>
+                </div>
             </div>
+            <div className="single-post-message">{currentPost.body}</div>
             <hr />
-            <div id="comments">Responses:</div>
+            <div className="replies-title">Responses:</div>
             <PostReplies postId={postId} />
             <AddReply postId={postId} />
+            <div className="single-post-button-mobile">
+                <hr />
+                <Link to="/"><button>Back to Posts</button></Link>
+            </div>
         </div>
         ) : <span />
     }

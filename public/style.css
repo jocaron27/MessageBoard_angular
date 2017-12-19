@@ -24,6 +24,34 @@
   .buttons {
     justify-content: space-between !important;
   }
+
+  .single-post-header {
+    width: 100% !important;
+  }
+
+  .single-post-info {
+    flex-direction: column;
+  }
+
+  .single-post-button button {
+    display: none;
+  }
+
+  .single-post-button-mobile {
+    text-align: center !important;
+  }
+  
+  .single-post-button-mobile button {
+    margin: 1%;
+    padding: 10px;
+    border: 1px solid black;
+  }
+}
+
+@media (min-width: 769px) {
+  .single-post-button-mobile, .single-post-button-mobile button {
+    display: none;
+  }
 }
 
 /* ------- General ------- */
@@ -161,4 +189,38 @@ form input, textarea {
   margin: 1%;
   padding: 10px;
   border: 1px solid black;
+}
+
+/* ------- Single Post ------- */
+
+.single-post-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.single-post-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.single-post-title {
+  font-size: 2em;
+}
+
+.single-post-header {
+  width: 50%;
+}
+
+.single-post-message {
+  margin-top: 1em;
+}
+
+.single-post-button button {
+  margin: 1%;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.replies-title {
+  font-weight: 600;
 }

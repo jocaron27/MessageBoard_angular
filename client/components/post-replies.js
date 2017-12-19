@@ -13,7 +13,7 @@ function AllReplies(props) {
                         <div>{reply.text}</div>
                     </div>
                 )
-            }          
+            }
         })}
     </div>
     )

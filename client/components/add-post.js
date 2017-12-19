@@ -8,7 +8,7 @@ function AddPost(props) {
     const { handleSubmit } = props;
     return (
       <div className="main">
-        <h2>Create a new post:</h2>
+        <h2 className="addpost-title">Create a new post:</h2>
         <form className="form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="title">Title</label>
@@ -36,8 +36,8 @@ function AddPost(props) {
             />
           </div>
           <div className="form-group">
-            <Link to="/"><button type="cancel" className="button-main">Cancel</button></Link>
-            <button type="submit" className="button-main">Create Post</button>
+            <button type="submit" className="addpost-button">Create Post</button>
+            <button className="addpost-button" type="cancel"><Link to="/">Cancel</Link></button>
           </div>
         </form>
     </div>

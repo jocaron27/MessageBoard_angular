@@ -6,7 +6,6 @@ function AddReply(props) {
     const { handleSubmit, newReplyMessage, newReplyUser, handleChangeMessage, handleChangeUser } = props;
     return (
       <div className="main">
-        <h2>Create a new post:</h2>
         <form className="form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="body">Reply Message</label>

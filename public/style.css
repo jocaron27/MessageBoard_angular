@@ -25,9 +25,27 @@ nav a {
   margin: 1em;
 }
 
+form {
+  position: relative;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  position: relative;
+  margin: auto;
+}
+
 form div {
   margin: 1em;
   display: inline-block;
+  width: 90%;
+}
+
+form input, textarea {
+  width: 100%;
+  margin: 1em 0em;
 }
 
 /* ------- App ------- */
@@ -43,7 +61,6 @@ form div {
 .main {
   position: relative;
   margin: auto;
-  width: 90%;
   padding: 7%;
 }
 
@@ -94,6 +111,23 @@ form div {
 }
 
 .post-button {
+  float: right;
+  margin: 1%;
+  padding: 10px;
+}
+
+.post-button:hover {
+  cursor: pointer;
+}
+
+/* ------- Add Post ------- */
+
+.addpost-title {
+  text-align: center;
+  width: 100%;
+}
+
+.addpost-button {
   float: right;
   margin: 1%;
   padding: 10px;

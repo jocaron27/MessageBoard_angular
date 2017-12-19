@@ -4,6 +4,14 @@
   .post-arrow {
     display: none;
   }
+
+  .form-group {
+    text-align: center;
+  }
+
+  .buttons {
+    justify-content: space-between !important;
+  }
 }
 
 /* ------- General ------- */
@@ -46,6 +54,7 @@ form div {
 form input, textarea {
   width: 100%;
   margin: 1em 0em;
+  border: 1px solid black;
 }
 
 /* ------- App ------- */
@@ -114,6 +123,7 @@ form input, textarea {
   float: right;
   margin: 1%;
   padding: 10px;
+  border: 1px solid black;
 }
 
 .post-button:hover {
@@ -127,8 +137,16 @@ form input, textarea {
   width: 100%;
 }
 
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  position: relative;
+  margin: auto;
+}
+
 .addpost-button {
-  float: right;
   margin: 1%;
   padding: 10px;
+  border: 1px solid black;
 }

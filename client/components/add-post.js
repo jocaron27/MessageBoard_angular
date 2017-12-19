@@ -36,8 +36,10 @@ function AddPost(props) {
             />
           </div>
           <div className="form-group">
-            <button type="submit" className="addpost-button">Create Post</button>
-            <button className="addpost-button" type="cancel"><Link to="/">Cancel</Link></button>
+            <div className="buttons">
+              <button className="addpost-button" type="cancel"><Link to="/">Cancel</Link></button>
+              <button type="submit" className="addpost-button">Create Post</button>
+            </div>
           </div>
         </form>
     </div>

@@ -6,8 +6,8 @@ function AddReply(props) {
     const { handleSubmit, newReplyMessage, newReplyUser, handleChangeMessage, handleChangeUser } = props;
     return (
       <div className="main">
-        <form className="form" onSubmit={handleSubmit}>
-          <div className="form-group">
+        <form className="reply-form" onSubmit={handleSubmit}>
+          <div className="reply-form-group-form">
             <label htmlFor="body">Reply Message</label>
             <textarea
             value={newReplyMessage}
@@ -29,8 +29,8 @@ function AddReply(props) {
               required
             />
           </div>
-          <div className="form-group">
-            <button type="submit" className="button-main">Post Reply</button>
+          <div className="reply-form-group-button">
+            <button type="submit" className="reply-button">Post Reply</button>
           </div>
         </form>
     </div>

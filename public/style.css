@@ -46,6 +46,10 @@
     padding: 10px;
     border: 1px solid black;
   }
+
+  .reply-form {
+    flex-direction: column !important;
+  }
 }
 
 @media (min-width: 769px) {
@@ -223,4 +227,38 @@ form input, textarea {
 
 .replies-title {
   font-weight: 600;
+  margin-bottom: 1em;
+}
+
+/* ------- Post Replies ------- */
+
+.replies {
+  width: 90%;
+  position: relative;
+  margin: auto;
+}
+
+.reply-user {
+  font-weight: 600;
+}
+
+.reply-form {
+  display: flex;
+  flex-direction: row;
+}
+
+.reply-form-group-form {
+  flex: 4;
+}
+
+.reply-form-group-button {
+  flex: 1;
+  margin: auto;
+}
+
+.reply-button {
+  margin: 1%;
+  padding: 10px;
+  border: 1px solid black;
+  width: 100%;
 }

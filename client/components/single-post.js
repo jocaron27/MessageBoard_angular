@@ -28,6 +28,7 @@ function SinglePost(props) {
             <hr />
             <div className="replies-title">Responses:</div>
             <PostReplies postId={postId} />
+            <hr />
             <AddReply postId={postId} />
             <div className="single-post-button-mobile">
                 <hr />

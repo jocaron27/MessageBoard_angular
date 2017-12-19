@@ -9,8 +9,9 @@ function AllReplies(props) {
             if (reply.postId === postId) {
                 return (
                     <div key={reply.id}>
-                        <div>{reply.user}:</div>
-                        <div>{reply.text}</div>
+                        <div className="reply-user">{reply.user}:</div>
+                        <div className="reply-text">{reply.text}</div>
+                        <hr />
                     </div>
                 )
             }

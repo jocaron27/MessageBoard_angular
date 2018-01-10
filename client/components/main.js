@@ -9,7 +9,7 @@ const Main = (props) => {
 
   return (
     <div className="app">
-      <h1 className="title">The Fairygodboss Message Board</h1>
+      <h1 className="title">Message Board</h1>
       {children}
     </div>
   )

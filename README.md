@@ -1,6 +1,6 @@
 # MessageBoard
 
-A simple messaging board using React.Js
+A simple messaging board using AngularJS
 
 ## Setup
 

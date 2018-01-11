@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
   <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width initial-scale=1.0'>
     <title>Message Board</title>
     <link rel="stylesheet" href="/style.css" />
-    <script defer src="/bundle.js"></script>
+    <!-- <script defer src="/bundle.js"></script> -->
   </head>
-  <body>
-    <div id="app"></div>
+  <body ng-cloak>
+    <div className="app">
+      <h1 className="title">Message Board</h1>
+      <all-posts></all-posts>
+      <!-- router goes here <ui-view></ui-view> -->
+    </div>
+
+    <script src="/angular/angular.js"></script> 
+    <script src="/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/moment/moment.js"></script>  
+    <script src="module.js"></script>
+    <script src="posts/all-posts/all-posts.component.js"></script>
   </body>
 </html>
 

@@ -131,6 +131,10 @@ form input, textarea {
   justify-content: space-between;
 }
 
+.post:hover {
+  cursor: pointer;
+}
+
 .post-content {
   flex: 10;
 }
@@ -223,6 +227,10 @@ form input, textarea {
   margin: 1%;
   padding: 10px;
   border: 1px solid black;
+}
+
+.single-post-button button:hover, .single-post-button-mobile button:hover {
+  cursor: pointer;
 }
 
 .replies-title {

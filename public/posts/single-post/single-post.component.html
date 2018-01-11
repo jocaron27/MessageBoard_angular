@@ -1,0 +1,30 @@
+<div class="main">
+    <div>
+        <div class="single-post-container">
+            <div class="single-post-header">
+                <div class="single-post-title">{{vm.post.title}}</div>
+                <div class="single-post-info">
+                    <div class="single-post-user">By: {{vm.post.user}}</div>
+                    <!-- <div class="single-post-date">On: {moment(currentPost.date).format('MMMM Do YYYY, h:mm:ss a')}</div> -->
+                </div>
+            </div>
+            <div class="single-post-button">
+                <a ui-sref="posts">
+                    <button>Back to Posts</button>
+                </a>
+            </div>
+        </div>
+        <div class="single-post-message">{{vm.post.body}}</div>
+        <hr />
+        <div class="replies-title">Responses:</div>
+        <!-- <PostReplies postId={postId} />
+        <hr />
+        <AddReply postId={postId} /> -->
+        <div class="single-post-button-mobile">
+            <hr />
+            <a ui-sref="posts">
+                <button>Back to Posts</button>
+            </a>
+        </div>
+    </div>
+</div>

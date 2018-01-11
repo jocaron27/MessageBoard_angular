@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html>
   <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width initial-scale=1.0'>
@@ -7,18 +7,29 @@
     <link rel="stylesheet" href="/style.css" />
     <!-- <script defer src="/bundle.js"></script> -->
   </head>
-  <body ng-cloak>
-    <div className="app">
-      <h1 className="title">Message Board</h1>
-      <all-posts></all-posts>
-      <!-- router goes here <ui-view></ui-view> -->
+  <body ng-app="app">
+    <div class="app">
+      <h1 class="title">Message Board</h1>
+
+      <ui-view></ui-view>
+
     </div>
 
-    <script src="/angular/angular.js"></script> 
-    <script src="/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="/moment/moment.js"></script>  
-    <script src="module.js"></script>
-    <script src="posts/all-posts/all-posts.component.js"></script>
+    <!-- node modules -->
+    <script src="/angular.js"></script> 
+    <script src="/angular-ui-router.js"></script>
+    <script src="/moment.js"></script> 
+
+    <!-- app modules -->
+    <script src="/app.module.js"></script>
+    <script src="/core/app.core.js"></script>
+    <script src="/core/config.js"></script>
+    <script src="/posts/posts.module.js"></script>
+
+    <!-- app components -->
+    <script src="/posts/all-posts/all-posts.component.js"></script>
+    <script src="/posts/single-post/single-post.component.js"></script>
+
   </body>
 </html>
 

@@ -12,7 +12,6 @@
         vm.posts = [];
 
         vm.$onInit = function() {
-            console.log("Fetching all posts")
             fetchPosts($http).then(posts => {
                 vm.posts = posts;
             })

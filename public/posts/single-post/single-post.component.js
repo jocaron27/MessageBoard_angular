@@ -12,7 +12,6 @@
         vm.post = {};
 
         vm.$onInit = function() {
-            console.log("Fetching single post")
             fetchPosts($http).then(posts => {
                 vm.post = posts.find(post => post.id == $stateParams.id);
             })

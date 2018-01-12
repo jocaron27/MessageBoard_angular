@@ -5,7 +5,7 @@
                 <div class="single-post-title">{{vm.post.title}}</div>
                 <div class="single-post-info">
                     <div class="single-post-user">By: {{vm.post.user}}</div>
-                    <!-- <div class="single-post-date">On: {moment(currentPost.date).format('MMMM Do YYYY, h:mm:ss a')}</div> -->
+                    <div class="single-post-date">On: {{vm.post.date | moment}}</div>
                 </div>
             </div>
             <div class="single-post-button">

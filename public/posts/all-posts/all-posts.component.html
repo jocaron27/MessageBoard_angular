@@ -1,6 +1,5 @@
 <div class="main">
     <!-- From React:
-    let date = moment(post.date).format('MMMM Do YYYY, h:mm:ss a');
     let comments = replies.filter(reply => reply.postId === post.id).length; -->
     <div ng-repeat="post in vm.posts">
         <!-- From React: <Link key={post.id} to={`/posts/${post.id}`}> -->
@@ -21,7 +20,7 @@
                             </div>
                         </div>
                         <div class="post-content-date">
-                            <!-- From React: Last Update: {date} -->
+                            Last Update: {{post.date | moment}}
                         </div>
                     </div>
                 </div>
@@ -32,7 +31,7 @@
         
     </div>
     <!-- From React:
-        if not postst render:
+        if no posts render:
         <p>There are currently no posts. Click <Link to="/new">here</Link> to add one!</p>}
     <Link to="/new"><button className="post-button">Create New Post</button></Link> -->
 </div>

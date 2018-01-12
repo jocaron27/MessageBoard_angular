@@ -4,6 +4,12 @@
     angular.module("app.core")
         .config(function ($stateProvider) {
 
+            var homeState = {
+                name: "home",
+                url: "",
+                component: "allPosts"
+            }
+
             var allPostsState = {
                 name: "posts",
                 url: "/posts",
@@ -16,6 +22,7 @@
                 component: "singlePost",
             }
 
+            $stateProvider.state(homeState);
             $stateProvider.state(allPostsState);
             $stateProvider.state(singlePostState);
 

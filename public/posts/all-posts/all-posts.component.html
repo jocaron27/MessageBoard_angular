@@ -6,9 +6,8 @@
         <a ng-click="vm.goTo(post.id)">
             <div class="post">
                 <div class="post-content">
-                    <!-- From React: {post.title.length > 30 ? post.title.slice(0, 30).concat('...') : post.title} -->
                     <div class="post-content-title">
-                        {{post.title}}
+                        {{post.title | length: 30}}
                     </div>
                     <div class="post-content-container">
                         <div class="post-content-info">

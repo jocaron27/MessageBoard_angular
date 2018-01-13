@@ -22,9 +22,15 @@
                 component: "singlePost",
             }
 
+            var addPostState = {
+                name: "addPost",
+                url: "/posts/new",
+                component: "addPost"
+            }
+
             $stateProvider.state(homeState);
             $stateProvider.state(allPostsState);
             $stateProvider.state(singlePostState);
-
+            $stateProvider.state(addPostState);
         })
 }());

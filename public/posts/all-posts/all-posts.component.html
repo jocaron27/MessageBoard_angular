@@ -1,7 +1,7 @@
 <div class="main">
     <!-- From React:
     let comments = replies.filter(reply => reply.postId === post.id).length; -->
-    <div ng-repeat="post in vm.posts">
+    <div ng-show="vm.posts.length" ng-repeat="post in vm.posts">
         <!-- From React: <Link key={post.id} to={`/posts/${post.id}`}> -->
         <a ng-click="vm.goTo(post.id)">
             <div class="post">
@@ -29,8 +29,10 @@
 
         
     </div>
-    <!-- From React:
-        if no posts render:
-        <p>There are currently no posts. Click <Link to="/new">here</Link> to add one!</p>}
-    <Link to="/new"><button className="post-button">Create New Post</button></Link> -->
+    <div ng-hide="vm.posts.length">
+        <p>
+            There are currently no posts. Click <a ui-sref="addPost">here</a> to add one!
+        </p>
+    </div>
+    <a ui-sref="addPost"><button class="post-button">Create New Post</button></a>
 </div>

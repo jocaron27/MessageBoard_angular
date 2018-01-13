@@ -2,7 +2,6 @@
     <!-- From React:
     let comments = replies.filter(reply => reply.postId === post.id).length; -->
     <div ng-show="vm.posts.length" ng-repeat="post in vm.posts">
-        <!-- From React: <Link key={post.id} to={`/posts/${post.id}`}> -->
         <a ng-click="vm.goTo(post.id)">
             <div class="post">
                 <div class="post-content">

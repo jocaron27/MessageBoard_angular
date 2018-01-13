@@ -1,18 +1,18 @@
 (function () {
     'use strict'
 
-    function fetchPosts($http) {
-        return $http.get("/api/posts")
-        .then(res => res.data);
-    }
+    // function fetchPosts($http) {
+    //     return $http.get("/api/posts")
+    //     .then(res => res.data);
+    // }
 
-    function controller($http, $state) {
+    function controller($http, $state, fetchPosts) {
         let vm = this;
 
         vm.posts = [];
 
         vm.$onInit = function() {
-            fetchPosts($http).then(posts => {
+            fetchPosts().then(posts => {
                 vm.posts = posts;
             })
         }
@@ -26,6 +26,6 @@
     .component("allPosts", {
         templateUrl: "/posts/all-posts/all-posts.component.html",
         controllerAs: "vm",
-        controller: ["$http", "$state", controller]
+        controller: ["$http", "$state", "fetchPosts", controller]
     })
 }());

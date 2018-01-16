@@ -1,8 +1,8 @@
-(function () {
+namespace app {
     'use strict'
 
     angular.module("app.core")
-        .factory ('fetchPosts', ["$http", function ($http) {
+        .factory ('fetchPosts', ["$http", function ($http: angular.IHttpService) {
 
             return function() {
                 return $http.get("/api/posts")
@@ -10,4 +10,4 @@
             }
             
         }])
-}());
+}

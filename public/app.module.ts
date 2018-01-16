@@ -9,5 +9,5 @@ namespace app {
     //feature
     "app.posts"
   ]);
-
+ 
 }

@@ -1,28 +1,37 @@
-(function () {
+import * as angular from 'angular';
+import "angular-ui-router";
+
+namespace config {
     "use strict";
 
     angular.module("app.core")
-        .config(function ($stateProvider) {
+        .config(function ($stateProvider: angular.ui.IStateProvider): void {
 
-            var homeState = {
+            interface IState {
+                name: string,
+                url: string,
+                component: string
+            }
+
+            let homeState: IState = {
                 name: "home",
                 url: "",
                 component: "allPosts"
             }
 
-            var allPostsState = {
+            let allPostsState: IState = {
                 name: "posts",
                 url: "/posts",
                 component: "allPosts",
             }
 
-            var singlePostState = {
+            let singlePostState: IState = {
                 name: "post",
                 url: "/posts/{id}",
                 component: "singlePost",
             }
 
-            var addPostState = {
+            let addPostState: IState = {
                 name: "addPost",
                 url: "/posts/new",
                 component: "addPost"
@@ -33,4 +42,4 @@
             $stateProvider.state(singlePostState);
             $stateProvider.state(addPostState);
         })
-}());
+}

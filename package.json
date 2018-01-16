@@ -20,6 +20,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/angular": "^1.6.40",
+    "@types/angular-ui-router": "^1.1.40",
     "@uirouter/angularjs": "^1.0.12",
     "angular": "^1.6.8",
     "axios": "^0.15.3",

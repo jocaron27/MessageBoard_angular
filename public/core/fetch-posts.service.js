@@ -1,13 +1,11 @@
 (function () {
-    'use strict'
-
+    'use strict';
     angular.module("app.core")
-        .factory ('fetchPosts', ["$http", function ($http) {
-
-            return function() {
+        .factory('fetchPosts', ["$http", function ($http) {
+            return function () {
                 return $http.get("/api/posts")
-            .then(res => res.data);
-            }
-            
-        }])
+                    .then(function (res) { return res.data; });
+            };
+        }]);
 }());
+//# sourceMappingURL=fetch-posts.service.js.map

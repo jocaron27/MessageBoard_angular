@@ -56,6 +56,7 @@ const createApp = () => {
   app.use(express.static(path.join(__dirname, '..', 'node_modules', 'angular-aria')))
   app.use(express.static(path.join(__dirname, '..', 'node_modules', 'angular-material')))
   app.use(express.static(path.join(__dirname, '..', 'node_modules', 'angular-messages')))
+  app.use(express.static(path.join(__dirname, '..', 'node_modules', 'ng-table', 'bundles')))
 
   // any remaining requests with an extension (.js, .css, etc.) send 404
   app.use((req, res, next) => {

@@ -22,6 +22,7 @@
   "dependencies": {
     "@types/angular": "^1.6.40",
     "@types/angular-ui-router": "^1.1.40",
+    "@types/ng-table": "^2.0.1",
     "@uirouter/angularjs": "^1.0.12",
     "angular": "^1.6.8",
     "angular-animate": "^1.6.8",
@@ -37,6 +38,7 @@
     "history": "^4.6.3",
     "moment": "^2.20.0",
     "morgan": "^1.8.1",
+    "ng-table": "^3.0.1",
     "passport": "^0.3.2",
     "passport-google-oauth": "^1.0.0",
     "pg": "^6.1.2",

@@ -1,13 +1,19 @@
 <div class="main">
     <h2 class="addpost-title">Create a new post:</h2>
     <form class="form" ng-submit="vm.handleSubmit()">
-        <div class="form-group">
-            <label htmlFor="title">Title</label>
-            <input class="form-control" type="text" ng-model="vm.post.title" required />
-            <label htmlFor="body">Message</label>
-            <textarea class="form-control" type="text" ng-model="vm.post.body" rows="4" cols="50" ng-attr-placeholder="Enter your post's text here."></textarea>
-            <label htmlFor="user">User</label>
-            <input class="form-control" type="text" ng-model="vm.post.user" required />
+        <div class="form-group" flex="column">
+            <md-input-container>
+                <label htmlFor="title">Title</label>
+                <input class="form-control" type="text" ng-model="vm.post.title" required />
+            </md-input-container>
+            <md-input-container>
+                <label htmlFor="body">Message</label>
+                <textarea class="form-control" type="text" ng-model="vm.post.body" rows="4" cols="50" ng-attr-placeholder="Enter your post's text here."></textarea>
+            </md-input-container>
+            <md-input-container>
+                <label htmlFor="user">User</label>
+                <input class="form-control" type="text" ng-model="vm.post.user" required />
+            </md-input-container>
         </div>
         <div class="form-group">
             <div class="buttons">

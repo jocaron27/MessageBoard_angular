@@ -60,6 +60,10 @@
 
 /* ------- General ------- */
 
+html {
+  background-color: white;
+}
+
 body {
   font-family: sans-serif;
 }

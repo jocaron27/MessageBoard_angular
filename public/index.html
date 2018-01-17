@@ -1,46 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width initial-scale=1.0'>
-    <title>Message Board</title>
-    <link rel="stylesheet" href="/style.css" />
-    <!-- <script defer src="/bundle.js"></script> -->
-  </head>
-  <body ng-app="app">
-    <div class="app">
-      <h1 class="title">Message Board</h1>
 
-      <ui-view></ui-view>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width initial-scale=1.0'>
+  <title>Message Board</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/angular-material.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/ng-table.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- <script defer src="/bundle.js"></script> -->
+</head>
 
-    </div>
+<body ng-app="app">
+  <div class="app">
+    <h1 class="title">Message Board</h1>
 
-    <!-- node modules -->
-    <script src="/angular.js"></script> 
-    <script src="/angular-ui-router.js"></script>
-    <script src="/moment.js"></script> 
-    <script src="/angular-aria.js"></script>
-    <script src="/angular-animate.js"></script>
-    <script src="/angular-material.js"></script>
-    <script src="/angular-messages.js"></script>
+    <ui-view></ui-view>
 
-    <!-- app modules -->
-    <script src="/app.module.js"></script>
-    <script src="/core/app.core.js"></script>
-    <script src="/core/config.js"></script>
-    <script src="/posts/posts.module.js"></script>
+  </div>
 
-    <!-- filters -->
-    <script src="/core/moment.filter.js"></script>
-    <script src="/core/length.filter.js"></script>
+  <!-- node modules -->
+  <script src="/angular.js"></script>
+  <script src="/angular-ui-router.js"></script>
+  <script src="/angular-animate.js"></script>
+  <script src="/angular-aria.js"></script>
+  <script src="/angular-messages.js"></script>
+  <script src="/angular-material.js"></script>
+  <script src="/ng-table.js"></script>
+  <script src="/moment.js"></script>
 
-    <!-- services -->
-    <script src="/core/fetch-posts.service.js"></script>
+  <!-- app modules -->
+  <script src="/app.module.js"></script>
+  <script src="/core/app.core.js"></script>
+  <script src="/core/config.js"></script>
+  <script src="/posts/posts.module.js"></script>
 
-    <!-- app components -->
-    <script src="/posts/all-posts/all-posts.component.js"></script>
-    <script src="/posts/single-post/single-post.component.js"></script>
-    <script src="posts/add-post/add-post.component.js"></script>
-  </body>
+  <!-- filters -->
+  <script src="/core/moment.filter.js"></script>
+  <script src="/core/length.filter.js"></script>
+
+  <!-- services -->
+  <script src="/core/fetch-posts.service.js"></script>
+
+  <!-- app components -->
+  <script src="/posts/all-posts/all-posts.component.js"></script>
+  <script src="/posts/single-post/single-post.component.js"></script>
+  <script src="posts/add-post/add-post.component.js"></script>
+</body>
+
 </html>
-

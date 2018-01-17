@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 /* ------- Mobile ------- */
 
 @media (max-width: 768px) {
@@ -37,16 +39,6 @@
     display: none;
   }
 
-  .single-post-button-mobile {
-    text-align: center !important;
-  }
-  
-  .single-post-button-mobile button {
-    margin: 1%;
-    padding: 10px;
-    border: 1px solid black;
-  }
-
   .reply-form {
     flex-direction: column !important;
   }
@@ -60,12 +52,16 @@
 
 /* ------- General ------- */
 
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
 html {
   background-color: white;
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 a {
@@ -197,6 +193,10 @@ form input, textarea {
   margin: auto;
 }
 
+.buttons button {
+  margin: 5px;
+}
+
 .addpost-button {
   margin: 1%;
   padding: 10px;
@@ -225,16 +225,6 @@ form input, textarea {
 
 .single-post-message {
   margin-top: 1em;
-}
-
-.single-post-button button {
-  margin: 1%;
-  padding: 10px;
-  border: 1px solid black;
-}
-
-.single-post-button button:hover, .single-post-button-mobile button:hover {
-  cursor: pointer;
 }
 
 .replies-title {

@@ -1,11 +1,6 @@
 (function () {
     'use strict'
 
-    // function fetchPosts($http) {
-    //     return $http.get("/api/posts")
-    //     .then(res => res.data);
-    // }
-
     function controller($http, $state, fetchPosts, $filter, NgTableParams) {
         let vm = this;
 

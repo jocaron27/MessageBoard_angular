@@ -3,25 +3,20 @@
         <button ng-click="vm.changeView('list')" ng-class="vm.activate('list')">List View</button>
         <button ng-click="vm.changeView('table')" ng-class="vm.activate('table')">Table View</button>
         <a ui-sref="addPost">
-            <button class="btn-info pull-right">Create New Post</button>
+            <button class="btn-info btn-sm pull-right">Create New Post</button>
         </a>
     </div>
 
     <md-content ng-show="vm.viewIsList()">
         <md-list flex ng-show="vm.posts.length">
-            <div ng-repeat="post in vm.posts" ng-click="vm.goTo(post.id)">
-                <md-list-item class="md-3-line" ng-click="null">
+            <md-list-item  class="md-3-line" ng-repeat="post in vm.posts" ng-click="vm.goTo(post.id)">
                     <div class="md-list-item-text" layout="column">
                         <div class="post-content-title">
-                            <h3>{{post.title | length: 30}}</h3>
+                            <h3><b>{{post.title | length: 30}}</b></h3>
                         </div>
                         <div class="post-content-container">
                             <div class="post-content-info">
-                                <div>
                                     Posted By: {{post.user}}
-                                </div>
-                                <div>
-                                </div>
                             </div>
                             <div class="post-content-date">
                                 Last Update: {{post.date | moment}}
@@ -30,7 +25,6 @@
                     </div>
                     <md-divider></md-divider>
                 </md-list-item>
-            </div>
         </md-list>
     </md-content>
 

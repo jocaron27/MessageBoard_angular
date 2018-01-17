@@ -1,6 +1,6 @@
 (function () {
     "use strict";
   
-    angular.module("app.posts", ["ngMaterial", "ngTable"])
+    angular.module("app.posts", ["ngMaterial", "ngTable", "ngMessages"])
 
 }());

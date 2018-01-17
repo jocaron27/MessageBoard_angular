@@ -28,16 +28,18 @@
         </md-list>
     </md-content>
 
-    <table ng-hide="vm.viewIsList()" ng-table="vm.tableParams" class="table table-striped" show-filter="true">
-        <tr ng-repeat="post in $data" ng-click="vm.goTo(post.id)">
-            <td data-title="'Title'" filter="{ title: 'text'}" sortable="'title'">
-                {{post.title}}</td>
-            <td data-title="'Posted By'" filter="{ user: 'text'}" sortable="'user'">
-                {{post.user}}</td>
-            <td data-title="'Last Update'" sortable="'date'">
-                {{post.date | moment}}</td>
-        </tr>
-    </table>
+    <div ng-hide="vm.viewIsList()">
+        <table ng-table="vm.tableParams" class="table table-striped" show-filter="true">
+            <tr ng-repeat="post in $data" ng-click="vm.goTo(post.id)">
+                <td data-title="'Title'" filter="{ title: 'text'}" sortable="'title'">
+                    {{post.title}}</td>
+                <td data-title="'Posted By'" filter="{ user: 'text'}" sortable="'user'">
+                    {{post.user}}</td>
+                <td data-title="'Last Update'" sortable="'date'">
+                    {{post.date | moment}}</td>
+            </tr>
+        </table>
+    </div>
 
     <div ng-hide="vm.posts.length">
         <p>

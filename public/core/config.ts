@@ -1,10 +1,10 @@
 import * as angular from 'angular';
-import "angular-ui-router";
+import 'angular-ui-router';
 
 namespace config {
-    "use strict";
+    'use strict';
 
-    angular.module("app.core")
+    angular.module('app.core')
         .config(function ($stateProvider: angular.ui.IStateProvider): void {
 
             interface IState {
@@ -14,27 +14,27 @@ namespace config {
             }
 
             let homeState: IState = {
-                name: "home",
-                url: "",
-                component: "allPosts"
+                name: 'home',
+                url: '',
+                component: 'allPosts'
             }
 
             let allPostsState: IState = {
-                name: "posts",
-                url: "/posts",
-                component: "allPosts",
+                name: 'posts',
+                url: '/posts',
+                component: 'allPosts',
             }
 
             let singlePostState: IState = {
-                name: "post",
-                url: "/posts/{id}",
-                component: "singlePost",
+                name: 'post',
+                url: '/posts/{id}',
+                component: 'singlePost',
             }
 
             let addPostState: IState = {
-                name: "addPost",
-                url: "/posts/new",
-                component: "addPost"
+                name: 'addPost',
+                url: '/posts/new',
+                component: 'addPost'
             }
 
             $stateProvider.state(homeState);

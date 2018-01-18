@@ -1,10 +1,10 @@
 (function () {
-    "use strict";
-    angular.module("app", [
+    'use strict';
+    angular.module('app', [
         //shared
-        "app.core",
+        'app.core',
         //feature
-        "app.posts"
+        'app.posts'
     ]);
 }());
 //# sourceMappingURL=app.module.js.map

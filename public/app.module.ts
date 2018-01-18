@@ -1,13 +1,13 @@
 namespace app {
-  "use strict";
+  'use strict';
 
-  angular.module("app", [
+  angular.module('app', [
 
     //shared
-    "app.core",
+    'app.core',
 
     //feature
-    "app.posts"
+    'app.posts'
   ]);
  
 }

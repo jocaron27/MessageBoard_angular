@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     // function fetchPosts($http) {
-    //     return $http.get("/api/posts")
+    //     return $http.get('/api/posts')
     //     .then(res => res.data);
     // }
     function controller($http, $state, fetchPosts, NgTableParams) {
@@ -21,9 +21,9 @@
 
         vm.activate = function(view) {
             if (view === vm.view) {
-                return "btn active";
+                return 'btn active';
             } else {
-                return "btn";
+                return 'btn';
             }
         }
 
@@ -34,14 +34,14 @@
             });
         };
         vm.goTo = function (id) {
-            $state.go("post", { id: id });
+            $state.go('post', { id: id });
         };
     }
-    angular.module("app.posts")
-        .component("allPosts", {
-        templateUrl: "/posts/all-posts/all-posts.component.html",
-        controllerAs: "vm",
-        controller: ["$http", "$state", "fetchPosts", "NgTableParams", controller]
+    angular.module('app.posts')
+        .component('allPosts', {
+        templateUrl: '/posts/all-posts/all-posts.component.html',
+        controllerAs: 'vm',
+        controller: ['$http', '$state', 'fetchPosts', 'NgTableParams', controller]
     });
 }());
 //# sourceMappingURL=all-posts.component.js.map

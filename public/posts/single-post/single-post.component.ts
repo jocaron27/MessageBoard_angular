@@ -2,7 +2,7 @@
     'use strict'
 
     function fetchPosts($http) {
-        return $http.get("/api/posts")
+        return $http.get('/api/posts')
         .then(res => res.data);
     }
 
@@ -18,10 +18,10 @@
         }
     }
 
-    angular.module("app.posts")
-    .component("singlePost", {
-        templateUrl: "/posts/single-post/single-post.component.html",
-        controllerAs: "vm",
-        controller: ["$http", "$stateParams", controller]
+    angular.module('app.posts')
+    .component('singlePost', {
+        templateUrl: '/posts/single-post/single-post.component.html',
+        controllerAs: 'vm',
+        controller: ['$http', '$stateParams', controller]
     })
 }());
